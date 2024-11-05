@@ -1,0 +1,63 @@
+.Background {
+    position: fixed; /* Make the background fixed to cover the whole viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../Assets/website\ homepage\ background.png"); /* Use your desired background color */
+    /* Alternatively, you can use a background image */
+    /* background-image: url('your-image-url.jpg'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    z-index: -1; /* Send the background behind other content */
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center; /* Center vertically */
+    width: 30%;
+    height: 50vh; /* 80% of the viewport height */
+    margin: 100px 0 200px 450px; 
+    padding: 100px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f2f1f18f; /* This is your profile container's background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* Optional: Add a subtle shadow */
+}
+
+  
+  .profile-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .profile-info {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .profile-info p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .back-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
