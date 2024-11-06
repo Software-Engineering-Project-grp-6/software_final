@@ -16,23 +16,9 @@
     padding: 30px 20px;
     background-color: #08090c;
     color: white;
-    margin-top: 2%;
+    margin-top: -1.4%;
 }
 
-/* Logo container styling */
-.logo-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logo {
-    width: 50px;
-    height: auto;
-    max-width: 1000px; /* Adjust logo size */
-    margin-right: 10px;
-}
 
 /* Search bar container */
 .search-container {
@@ -91,7 +77,7 @@
     background: white;
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 80%; /* Adjust width for responsiveness */
+    width: 120%; /* Adjust width for responsiveness */
     margin-bottom: 20px;
 }
 
@@ -153,7 +139,9 @@
 }
 
 .sidebar.slide-in {
-    left: 20px; /* Slide in to visible position */
+    left: 20px;
+    top: 1px;
+    margin-top: 98px;
 }
 
 .sidebar button {

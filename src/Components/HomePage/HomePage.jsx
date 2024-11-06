@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './HomePage.css'; // Ensure this path is correct
-import web_icon from '../Assets/website.png'; // Ensure correct relative path
 import {useLocation, useNavigate } from 'react-router-dom'; // Importing useNavigate
 import farmer_icon from '../Assets/farmer.jpg';
 export const HomePage = () => {
@@ -16,9 +15,6 @@ export const HomePage = () => {
 };
   return (
     <div className="homepage">
-      <div className="logo-container">
-        <img src={web_icon} alt="Logo" className="logo" />
-      </div>
       <header className="header">
         <button onClick={toggleSidebar} className="bars-icon">☰</button>
         <div className="search-container">
