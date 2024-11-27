@@ -6,7 +6,7 @@ export const ProfilePage = () => {
     const location = useLocation();
     const navigate = useNavigate();
     
-    const { username, email, password } = location.state || {};
+    const { username, email } = location.state || {};
 
     return (
     <div className="Background">
@@ -17,8 +17,6 @@ export const ProfilePage = () => {
                 <input type='text' value={username} disabled />
                 <p><b>Email:</b></p>
                 <input type='text' value={email} disabled />
-                <p><b>Password:</b></p>
-                <input type='text' value={password} disabled />
                 </div>  
             <button onClick={() => navigate('/home')} className="back-button">Back to Home</button>
         </div>

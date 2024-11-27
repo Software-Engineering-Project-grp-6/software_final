@@ -18,7 +18,7 @@
     align-self: center;
     justify-content: center; /* Center vertically */
     width: 30%;
-    height: 50vh; /* 80% of the viewport height */
+    height: 35vh; /* 80% of the viewport height */
     margin: 100px 0 200px 450px; 
     padding: 100px;
     border: 1px solid #ddd;
@@ -30,14 +30,15 @@
   
   .profile-container h2 {
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color: #333;
+    margin-top: -10px;
   }
   
   .profile-info {
     text-align: left;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
   }
   
   .profile-info p {
@@ -55,6 +56,9 @@
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    width: 150px;
+    justify-content: center;
+    margin-left: 155px;
   }
   
   .back-button:hover {
