@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import farmer_icon from '../Assets/farmer.jpg';
+import item_icon from '../Assets/item.jpg';
 import './VendorInfo.css';
 
 export const VendorInfo = () => {
@@ -78,7 +78,7 @@ export const VendorInfo = () => {
                     {items.map((item, index) => (
                         <div key={index} className="farmer-item2">
                             <div className="farmer-image2">
-                                <img src={farmer_icon} alt="farmer" />
+                                <img src={item_icon} alt="item" />
                             </div>
                             <div className="farmer-description2">
                                 <label>Item:</label>

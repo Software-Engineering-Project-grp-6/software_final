@@ -84,6 +84,7 @@
     border-radius: 10px;
     width: 90%; /* Adjust width for responsiveness */
     margin-bottom: 20px;
+    cursor: pointer; 
 }
 
 .farmer-image {

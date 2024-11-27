@@ -4,6 +4,7 @@ import { HomePage } from "../HomePage/HomePage"; // Ensure correct relative path
 import { LoginSignup } from "../LoginSignup/LoginSignup"; // Ensure correct relative path
 import {ProfilePage} from "../Profile/ProfilePage";
 import {VendorInfo} from "../VendorInfo/VendorInfo";
+import { VendorDescription } from "../VendorDescription/VendorDescription";
 const UserRoutes = () => {
     return (
         <Routes>
@@ -11,6 +12,7 @@ const UserRoutes = () => {
             <Route path="/home" element={<HomePage />} />
             <Route path="/profile" element={<ProfilePage/>} />
             <Route path="/vendorInfo" element={<VendorInfo/>} />
+            <Route path="/vendorDescription" element={<VendorDescription/>} />
         </Routes>
     );
 };

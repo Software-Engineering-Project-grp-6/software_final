@@ -16,6 +16,11 @@ export const HomePage = () => {
 const handleVendorInfoClick = () => {
   navigate('/vendorInfo'); // Navigate to profileInfo
 };
+const handleFarmerClick = (farmerName, businessName) => {
+  navigate('/vendorDescription', {
+    state: { farmerName, businessName }, // Pass farmer details to VendorDescription
+  });
+};
   return (
     <div className="homepage">
       <header className="header">
@@ -28,7 +33,10 @@ const handleVendorInfoClick = () => {
         <h2 className="farmer-list-title">Available Local Vendors</h2>
         <div className="farmer-items-container">
           {[...Array(10)].map((_, index) => (
-            <div key={index} className="farmer-item">
+            <div
+              key={index}
+              className="farmer-item"
+              onClick={() => handleFarmerClick(FarmerName || `Farmer ${index + 1}`, BusinessName || `Business ${index + 1}`)}>
               <div className="farmer-image"> <img src={farmer_icon} alt='farmer'/></div>
               <div className="farmer-description">
               <label>farmer's Name:</label> <input type='text' value={FarmerName} disabled /> 
