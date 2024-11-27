@@ -6,20 +6,18 @@ import './VendorInfo.css';
 export const VendorInfo = () => {
     const navigate = useNavigate();
 
-    // State for each input
     const [vInfo, setvInfo] = useState({
-        vendorName: '',
-        businessName: '',
+        VendorName: '',
+        BusinessName: '',
         email: '',
-        businessAddress: '',
-        postalCode: '',
-        phone: '',
-        licenseNumber: '',
-        item: '',
-        price: ''
+        BusinessAddress: '',
+        PostalCode: '',
+        Phone: '',
+        LicenseNumber: '',
     });
 
-    // Handle input change
+    const [items, setItems] = useState([]); // State for dynamic items
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setvInfo({
@@ -28,68 +26,81 @@ export const VendorInfo = () => {
         });
     };
 
-    // Function to handle the post
+    const handleItemChange = (index, field, value) => {
+        const updatedItems = [...items];
+        updatedItems[index] = {
+            ...updatedItems[index],
+            [field]: value,
+        };
+        setItems(updatedItems);
+    };
+
+    const addItem = () => {
+        setItems([...items, { item: '', price: '' }]);
+    };
+
     const handlePost = () => {
-        // Simple validation to check if all fields are filled
-        if (Object.values(vInfo).some(value => value.trim() === '')) {
+        if (
+            Object.values(vInfo).some((value) => value.trim() === '') ||
+            items.some((item) => item.item.trim() === '' || item.price.trim() === '')
+        ) {
             alert('Please fill out all fields before posting.');
             return;
         }
 
-        // Navigate to HomePage
+        console.log('Vendor Info:', vInfo);
+        console.log('Items:', items);
+
         navigate('/home');
     };
 
     return (
         <div className="background">
-             <div className="Post-container">
-                     <h2>Post Your Listings</h2>
-            
-                     <div className="PostYourL-info1">
-  <div className="row">
-    <p><b>Vendor Name:</b></p>
-    <input type="text" name="vendorName" value={vInfo.vendorName} onChange={handleChange} />
-  </div>
-  <div className="row">
-    <p><b>Business Name:</b></p>
-    <input type="text" name="businessName" value={vInfo.businessName} onChange={handleChange} />
-  </div>
-  <div className="row">
-    <p><b>Business Address:</b></p>
-    <input type="text" name="businessAddress" value={vInfo.businessAddress} onChange={handleChange} />
-  </div>
-  <div className="row">
-    <p><b>Postal Code:</b></p>
-    <input type="text" name="postalCode" value={vInfo.postalCode} onChange={handleChange} />
-  </div>
-  <div className="row">
-    <p><b>Email Address:</b></p>
-    <input type="text" name="email" value={vInfo.email} onChange={handleChange} />
-  </div>
-  <div className="row">
-    <p><b>Phone No.:</b></p>
-    <input type="text" name="phone" value={vInfo.phone} onChange={handleChange} />
-  </div>
-  <div className="row">
-    <p><b>License Number:</b></p>
-    <input type="text" name="licenseNumber" value={vInfo.licenseNumber} onChange={handleChange} />
-  </div>
-</div>
-            <p>_______________________________________________________________________________________________________________________________________</p>
-            <div className="farmer-items-container2">
-          {[...Array(10)].map((_, index) => (
-            <div key={index} className="farmer-item2">
-              <div className="farmer-image2"> <img src={farmer_icon} alt='farmer'/></div>
-              <div className="farmer-description2">
-              <label>Item:</label> <input type="text" name="item" value={vInfo.item} onChange={handleChange}/>
-              <label>Price:</label> <input type= 'text' name="price" value={vInfo.price} onChange={handleChange}  />
-              </div>
-            </div>
-          ))}
-        </div>
+            <div className="Post-container">
+                <h2>Post Your Listings</h2>
 
-            <button onClick={handlePost} className="post-button">Post</button>
+                <div className="PostYourL-info1">
+                    {Object.keys(vInfo).map((field, index) => (
+                        <div className="row" key={index}>
+                            <p><b>{field.replace(/([A-Z])/g, ' $1')}:</b></p>
+                            <input
+                                type="text"
+                                name={field}
+                                value={vInfo[field]}
+                                onChange={handleChange}
+                            />
+                        </div>
+                    ))}
+                </div>
+                <p>_____________________________________________________________________________________________________________________________________________</p>
+
+                <div className="farmer-items-container2">
+                    {items.map((item, index) => (
+                        <div key={index} className="farmer-item2">
+                            <div className="farmer-image2">
+                                <img src={farmer_icon} alt="farmer" />
+                            </div>
+                            <div className="farmer-description2">
+                                <label>Item:</label>
+                                <input
+                                    type="text"
+                                    value={item.item}
+                                    onChange={(e) => handleItemChange(index, 'item', e.target.value)}
+                                />
+                                <label>Price:</label>
+                                <input
+                                    type="text"
+                                    value={item.price}
+                                    onChange={(e) => handleItemChange(index, 'price', e.target.value)}
+                                />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <button onClick={addItem} className="add-item-button">Add Item</button>
+                <button onClick={handlePost} className="post-button">Post</button>
+            </div>
         </div>
-    </div>
     );
 };
