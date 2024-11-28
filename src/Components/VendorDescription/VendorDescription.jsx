@@ -62,12 +62,13 @@ export const VendorDescription = () => {
                                     value={`Item ${index + 1}`} // Example dynamic item name
                                     disabled // Makes the input read-only
                                 />
-                                <label>Price:</label>
+                                <label>Price/[kg/l]:</label>
                                 <input
                                     type="text"
                                     value={`$${(index + 1) * 2}.00`} // Example dynamic price
                                     disabled // Makes the input read-only
                                 />
+                            
                             </div>
                         </div>
                     ))}

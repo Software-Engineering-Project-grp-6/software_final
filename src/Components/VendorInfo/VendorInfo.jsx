@@ -87,7 +87,7 @@ export const VendorInfo = () => {
                                     value={item.item}
                                     onChange={(e) => handleItemChange(index, 'item', e.target.value)}
                                 />
-                                <label>Price:</label>
+                                <label>Price/[kg/l]:</label>
                                 <input
                                     type="text"
                                     value={item.price}

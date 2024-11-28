@@ -30,7 +30,7 @@
 .inputs {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: -10px;
     width: max-content;
     align-self: center;
 }
@@ -55,11 +55,13 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    margin-top: 5px;
 }
 
 .submit-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .submit {
