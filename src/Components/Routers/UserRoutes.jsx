@@ -5,6 +5,7 @@ import { LoginSignup } from "../LoginSignup/LoginSignup"; // Ensure correct rela
 import {ProfilePage} from "../Profile/ProfilePage";
 import {VendorInfo} from "../VendorInfo/VendorInfo";
 import { VendorDescription } from "../VendorDescription/VendorDescription";
+import Checkout from '../Checkout/Checkout'
 const UserRoutes = () => {
     return (
         <Routes>
@@ -13,6 +14,7 @@ const UserRoutes = () => {
             <Route path="/profile" element={<ProfilePage/>} />
             <Route path="/vendorInfo" element={<VendorInfo/>} />
             <Route path="/vendorDescription" element={<VendorDescription/>} />
+            <Route path="/checkout" element={<Checkout/>} />
         </Routes>
     );
 };

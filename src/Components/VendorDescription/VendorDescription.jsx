@@ -27,6 +27,9 @@ export const VendorDescription = () => {
     const handleBack = () => {
         navigate('/home'); // Navigate back to the home page
     };
+    const handleNext = () => {
+        navigate('/checkout');
+    }
 
     return (
         <div className="background3">
@@ -76,6 +79,7 @@ export const VendorDescription = () => {
 
                 {/* Back to Home button */}
                 <button onClick={handleBack} className="back-home-button3">Back to Home</button>
+                <button onClick={handleNext} className='checkout3'>Checkout</button>
             </div>
         </div>
     );
